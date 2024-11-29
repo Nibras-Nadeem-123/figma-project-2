@@ -1,37 +1,69 @@
-import { Heebo } from 'next/font/google'
-import React from 'react'
+import { Heebo } from 'next/font/google';
+import React from 'react';
 
-const inter = Heebo({ subsets: ["latin"] })
+const inter = Heebo({ subsets: ['latin'] });
 
 const Recent = () => {
   return (
-    <div className='justify-evenly bg-recentBackground w-[1345px] mt-[10%] pb-[10%] h-[522px] px-[16%]'>
-      <div className='flex justify-between w-[930px] pt-10'>
-        <p className={`${inter.className} ml-5 w-[120px] h-[32px] top-[26px] text-[22px] font-semibold`}>Recent Post</p>
-        <p className={`${inter.className}  text-backgroundButton hover:text-red-300 hover:underline cursor-pointer font-semibold w-[120px] text-[22px]`}>Veiw All</p>
+    <div className="flex flex-col justify-center bg-recentBackground max-w-screen-xl mx-auto mt-[10%] pb-[10%] px-6 md:px-[10%]">
+      {/* Header */}
+      <div className="flex justify-between items-center pt-10 mb-6">
+        <p className={`${inter.className} text-[20px] md:text-[22px] font-semibold`}>
+          Recent Post
+        </p>
+        <p
+          className={`${inter.className} text-backgroundButton hover:text-red-300 hover:underline cursor-pointer font-semibold text-[20px] md:text-[22px]`}
+        >
+          View All
+        </p>
       </div>
-      <section className='flex space-x-10'>
-        <div className=' h-[356px] w-[428px]  bg-white mt-10 ml-5 p-8'>
-          <p className={`${inter.className} text-[26px] w-[383.56px] h-[107.53px] font-extrabold`}>Making a design system from scratch</p>
-          <div className='flex w-[301.28px] text-heroText h-[42.12px] top-[128px]'>
-            <p className={`${inter.className} w-[109.44px] h-[42.12px] text-[18px]`}>12 Feb 2020</p>
-            <p className='font-semibold h-[42.12px]'>|</p>
-            <p className={`${inter.className} w-[140.25px] h-[42.12px] text-[18px] ml-5`}>Design , Pattern</p>
+
+      {/* Cards Section */}
+      <section className="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
+        {/* Card 1 */}
+        <div className="flex flex-col bg-white p-6 shadow-md rounded-lg">
+          <p
+            className={`${inter.className} text-[22px] md:text-[26px] font-extrabold mb-4`}
+          >
+            Making a design system from scratch
+          </p>
+          <div className="flex items-center space-x-4 text-sm md:text-[18px] text-heroText mb-4">
+            <p className={`${inter.className}`}>12 Feb 2020</p>
+            <span className="font-semibold">|</span>
+            <p className={`${inter.className}`}>Design, Pattern</p>
           </div>
-          <p className={`${inter.className} text-heroText w-[373px] h-[129.7px] text-[16px]`}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+          <p
+            className={`${inter.className} text-[14px] md:text-[16px] text-heroText`}
+          >
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </p>
         </div>
-        <div className=' h-[356px] w-[428px]  bg-white mt-10 ml-5 p-8'>
-          <p className={`${inter.className} text-[26px] w-[383.56px] h-[107.53px] font-extrabold`}>Making a design system from scratch</p>
-          <div className='flex w-[301.28px] text-heroText h-[42.12px] top-[128px]'>
-            <p className={`${inter.className} w-[109.44px] h-[42.12px] text-[18px]`}>12 Feb 2020</p>
-            <p className='font-semibold h-[42.12px]'>|</p>
-            <p className={`${inter.className} w-[140.25px] h-[42.12px] text-[18px] ml-5`}>Design , Pattern</p>
+
+        {/* Card 2 */}
+        <div className="flex flex-col bg-white p-6 shadow-md rounded-lg">
+          <p
+            className={`${inter.className} text-[22px] md:text-[26px] font-extrabold mb-4`}
+          >
+            Making a design system from scratch
+          </p>
+          <div className="flex items-center space-x-4 text-sm md:text-[18px] text-heroText mb-4">
+            <p className={`${inter.className}`}>12 Feb 2020</p>
+            <span className="font-semibold">|</span>
+            <p className={`${inter.className}`}>Design, Pattern</p>
           </div>
-          <p className={`${inter.className} text-heroText w-[373px] h-[129.7px] text-[16px]`}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+          <p
+            className={`${inter.className} text-[14px] md:text-[16px] text-heroText`}
+          >
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </p>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Recent
+export default Recent;

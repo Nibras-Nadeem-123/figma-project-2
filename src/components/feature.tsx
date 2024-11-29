@@ -1,62 +1,58 @@
-import { Heebo } from 'next/font/google'
-import Image from 'next/image'
-import React from 'react'
+import { Heebo } from 'next/font/google';
+import Image from 'next/image';
+import React from 'react';
 
-const inter = Heebo({ subsets: ["latin"] })
+const inter = Heebo({ subsets: ['latin'] });
 
 const Feature = () => {
-    return (
-        <div className=' h-[522px] w-[1345px] px-[17%] py-[10%] pb-[80%]'>
-            <div>
-                <p className={`${inter.className} text-[22px] font-semibold w-[152px] h-[32px] -mt-20 pb-5`}>Featured Work</p>
-            </div>
-            <section>
-                <div className='flex  mt-[5%]'>
-                    <div className=' '>
-                        <Image src={"/feature1.png"} alt='' height={300} width={346} className='rounded-md' />
-                    </div>
-                    <div className='w-[433.46px] ml-[40px] space-y-5'>
-                        <p className={`${inter.className} font-extrabold text-[30px]`}>Designing Dashboards</p>
-                        <div className='space-x-5'>
-                            <span className={`${inter.className} bg-backgroundButton text-white text-[18px] px-2 rounded-full `}>2020 </span>
-                            <span className=''>Dashboard</span>
-                        </div>
-                        <p className={`${inter.className} text-[18px] text-heroText w-[625px] h-[170px]`}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className='flex  mt-[10%]'>
-                    <div className=' '>
-                        <Image src={"/feature2.png"} alt='' height={300} width={346} className='rounded-md' />
-                    </div>
-                    <div className='w-[433.46px] ml-[40px] space-y-5'>
-                        <p className={`${inter.className} font-extrabold text-[20px]`}>Designing Dashboards</p>
-                        <div className='space-x-5'>
-                            <span className={`${inter.className} bg-backgroundButton text-white text-[18px] px-2 rounded-full `}>2020 </span>
-                            <span className=''>Dashboard</span>
-                        </div>
-                        <p className={`${inter.className} text-[18px] text-heroText w-[625px] h-[170px]`}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div className='flex  mt-[10%]'>
-                    <div className=' '>
-                        <Image src={"/feature3.png"} alt='' height={300} width={346} className='rounded-md' />
-                    </div>
-                    <div className='w-[433.46px] ml-[40px] space-y-5'>
-                        <p className={`${inter.className} font-extrabold text-[30px]`}>Designing Dashboards</p>
-                        <div className='space-x-5'>
-                            <span className={`${inter.className} bg-backgroundButton text-white text-[18px] px-2 rounded-full `}>2020 </span>
-                            <span className=''>Dashboard</span>
-                        </div>
-                        <p className={`${inter.className} text-[18px] text-heroText w-[625px] h-[170px]`}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    )
-}
+  return (
+    <div className="max-w-screen-xl mx-auto px-6 md:px-[10%] py-10">
+      {/* Heading */}
+      <div className="mb-8">
+        <p className={`${inter.className} text-[20px] md:text-[22px] font-semibold`}>
+          Featured Work
+        </p>
+      </div>
 
-export default Feature
+      {/* Featured Sections */}
+      {[1, 2, 3 ].map((item, index) => (
+        <section key={index} className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8 mb-16">
+          {/* Image */}
+          <div className="w-full md:w-[346px] flex-shrink-0">
+            <Image
+              src={`/feature${item}.png`}
+              alt={`Feature ${item}`}
+              width={346}
+              height={300}
+              className="rounded-md object-cover w-full h-auto"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col space-y-4 md:space-y-5">
+            <p
+              className={`${inter.className} font-extrabold text-[22px] md:text-[30px]`}
+            >
+              Designing Dashboards
+            </p>
+            <div className="flex items-center space-x-3 md:space-x-5">
+              <span
+                className={`${inter.className} bg-backgroundButton text-white text-[14px] md:text-[18px] px-3 py-1 rounded-full`}
+              >
+                2020
+              </span>
+              <span className="text-[14px] md:text-[18px] text-gray-700">Dashboard</span>
+            </div>
+            <p
+              className={`${inter.className} text-[14px] md:text-[18px] text-heroText`}
+            >
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            </p>
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+};
+
+export default Feature;
